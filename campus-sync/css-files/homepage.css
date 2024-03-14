@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-5,100..900&family=League+Spartan:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+}
+#page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #2e2e2e;
+    background-color: bisque;
+}
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: #f5f5dc;
+}
+.head-screen{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem auto;
+}
+.head-screen img{
+    width: 3rem;
+}
+.head-screen h2{
+    font-size: 1rem;
+}
+.head-screen svg{
+    width: 2rem;
+}
+.notification{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -4rem auto;
+    gap: 2rem;
+}
+.notification svg{
+    width: 2rem;
+}
+.search-btn{
+    position: relative;
+    border: 1px solid #008080;
+    border-radius: 0.5rem;
+    height: 38px;
+    width: 19rem;
+    display: flex;
+    align-items: center;
+    margin: 1.5rem auto;
+
+}
+.search-btn input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.8rem 0.6rem;
+    border: 1px solid #008080;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #008080;
+}
+.search-btn ::placeholder{
+    font-size: 1rem;
+    text-align: center;
+}
+.search-btn svg{
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+    width: 1.5rem;
+    height: 2.2rem;
+    color: rgb(177, 168, 168);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.news-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0;
+}
+.news-wrapper h1{
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+.newsline{
+    height: 135px;
+    width: 370px;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #bb7333;
+    border-radius: 5px;
+    position: relative;
+}
+.news-content{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    gap: 0.5rem;
+    margin: 0.5rem;
+}
+.news-content h2{
+    width: 20ch;
+    font-size: 1.2rem;
+    color: red;
+    line-height: 1.5rem;
+}
+.news-content p{
+    width: 27ch;
+    font-size: 1rem;
+    color: #008080;
+}
+.news-content button{
+    width: 7rem;
+    padding: 0.4rem;
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.87rem;
+
+}
+.newsline img{
+    position: absolute;
+    top: 15%;
+    left: 65%;
+    width: 8rem;
+    border-radius: 50%;
+}
+.categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: -1rem auto;
+}
+.categories h1{
+    font-size: 1.5rem; 
+}
+
+.categories .category{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin: 0.3rem auto;
+}
+.category .accomodation img{
+    width: 11rem;
+    height: 8rem;
+    border-radius: 20px;
+}
+footer{
+    margin: 0.2rem auto;
+    width: 100%;
+    height: 50px;
+
+}
+.footer-icons{
+    background-color: #008080;
+    border-radius:  0 0 10px 10px;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 3rem auto;
+}
+.footer-icons svg{
+    width: 3rem; 
+    height: 2rem;
+
+}
+
+@media only screen and (min-width: 420px){
+    .container{
+        height: 49rem;
+        width: 25rem;
+        border-radius: 10px;
+        border: 5px solid hsl(0, 0, 18%);
+    }
+}
+
