@@ -15,9 +15,39 @@
                 </svg>
                 <h1>Navigation</h1>
             </div>
-            <div class="form">
-                <label for="#">Destination</label>
-                <select name="destination" id="destination">
+            <div class="dropdown">
+                <div class="select">
+                    <span class="selected">Select location</span>
+                    <div class="caret">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                        </svg>
+                    </div>
+                </div>
+                <ul class="menu">
+                    <li class="active">Select location</li>
+                    <li>Select location</li>
+                    <li>Select location</li>
+                    <li>Select location</li>
+                    <li>Select location</li>
+                </ul>
+
+                <div class="select1">
+                    <span class="selected">Select location</span>
+                    <div class="caret">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                        </svg>
+                    </div>
+                </div>
+                <ul class="menu">
+                    <li class="active">Select location</li>
+                    <li>Select location</li>
+                    <li>Select location</li>
+                    <li>Select location</li>
+                    <li>Select location</li>
+                </ul>
+                <!--<select name="destination" id="destination">
                     <option value="destination">Select location</option>
                     <option value="destination">Select</option>
                     <option value="destination">Select</option>
@@ -30,7 +60,7 @@
                     <option value="destination">Select</option>
                     <option value="destination">Select</option>
                     <option value="destination">Select</option>
-                </select>
+                </select>-->
 
                 <div class="check-circle">
                     <img src="/campus-sync/images/check-circle.png" alt="">
@@ -38,6 +68,7 @@
                 </div>
             </div>
 
+            <button type="submit">Proceed</button>
             <footer>
                 <div class="footer-icons">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -62,6 +93,40 @@
             </footer>
         </div>
     </div>
-    
+    <script>
+        const dropdown = document.querySelectorAll('.dropdown');
+
+        //loop through all  dropdown element
+        dropdowns.forEach(dropdown => {
+            //get inner element from each dropdown
+            const select = dropdown.querySelector('.select');
+            const select1 = dropdown.querySelector('.select1');
+            const caret = dropdown.querySelector('.caret');
+            const menu = dropdown.querySelector('.menu');
+            const options = dropdown.querySelectorAll('.menu li');
+
+            select.addEventListener('click', () =>{
+                // add the clicked select styles to all the element
+                select.classList.toggle('select-clicked');
+                caret.classList.toggle('caret-rotate');
+                menu.classList.toggle('menu-open');
+
+                //remove active class from all option element
+                options.forEach(option => {
+                    option.classList.remove('active');
+                });
+                option.classList.add('active');
+
+            });
+
+            //loop through all options element
+            options.forEach(Option =>{
+                Option.addEventListener('clicked', () =>{
+                    selected.innerText = option.innerText
+                });
+            });
+
+        });
+    </script>
 </body>
 </html>
