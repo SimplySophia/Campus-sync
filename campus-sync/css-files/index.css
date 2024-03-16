@@ -26,8 +26,7 @@
     margin-left: 8rem;
     margin-top: 1rem;
 }
-
-.btn{
+.switch{
     position: relative;
     border: 1px solid #008080;
     border-radius: 0.5rem;
@@ -35,40 +34,37 @@
     width: 22rem;
     display: flex;
     align-items: center;
-    margin: 1.5rem auto;
-
-}
-.btn input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0.8rem 0.6rem;
-    border: 1px solid #008080;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #008080;
-}
-.btn ::placeholder{
-    padding: 3rem;
-}
-.btn button{
-    position: absolute;
-    top: 0;
-    left: 10rem;
-    width: 200px;
-    height: 100%;
-    background-color: #008080;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
+    margin: 2rem auto;
     cursor: pointer;
+    overflow: hidden;
+}
+.switch a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1rem;
     font-weight: 400;
+    text-decoration: none;
+    width: 50%;
+    z-index: 10;
 }
+.switch #sign-up{
+    color: #fff;
+}
+
+#btn{
+    position: absolute;
+    bottom: 0;
+    left: 11rem;
+    width: 11rem;
+    height: 42px;
+    cursor: pointer;
+    background-color: #008080;
+    border-radius: 0.5rem;
+    box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+
 .container h1{
     font-size: 1.5rem;
     margin-left: 1.5rem;
@@ -82,7 +78,11 @@ form{
     margin: 2rem auto;
     gap: 0.6rem;
 }
-
+.input-control{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 form input{
     padding: 0.6rem;
     border-radius: 10px;
@@ -92,13 +92,16 @@ form input{
 form button{
     padding: 0.8rem;
     width: 100%;
-    margin: 2rem auto;
+    margin: 0.5rem auto;
     border-radius: 10px;
     border: none;
     background-color: #008080;
     color: #fff;
     font-size: 1rem;
     font-weight: 400;
+}
+button.active{
+    background: #d0a421;
 }
 @media only screen and (min-width: 420px){
     .container{

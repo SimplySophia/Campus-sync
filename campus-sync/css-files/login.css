@@ -6,6 +6,11 @@
     box-sizing: border-box;
     font-family: "League Spartan", sans-serif;
 }
+.box-login{
+    position: relative;
+    top: 0;
+    left: 0;
+}
 .page{
     display: flex;
     justify-content: center;
@@ -26,8 +31,7 @@
     margin-left: 8rem;
     margin-top: 5rem;
 }
-
-.btn{
+.switch{
     position: relative;
     border: 1px solid #008080;
     border-radius: 0.5rem;
@@ -36,10 +40,36 @@
     display: flex;
     align-items: center;
     margin: 4rem auto;
-
+    cursor: pointer;
+    overflow: hidden;
+}
+.switch a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    width: 50%;
+    z-index: 10;
+}
+.switch #login{
+    color: #fff;
 }
 
-.btn input {
+#btn{
+    position: absolute;
+    bottom: 0;
+    left: -0.3rem;
+    width: 11rem;
+    height: 42px;
+    cursor: pointer;
+    background-color: #008080;
+    border-radius: 0.5rem;
+    box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+/*.btn input {
     position: absolute;
     top: 0;
     left: 0;
@@ -71,7 +101,7 @@
     cursor: pointer;
     font-size: 1rem;
     font-weight: 400;
-}
+}*/
 form{
     display: flex;
     justify-content: center;
@@ -82,6 +112,11 @@ form{
     z-index: 1;
 }
 
+.input-control{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 form input{
     padding: 0.9rem;
     border-radius: 10px;
