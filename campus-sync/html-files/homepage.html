@@ -87,8 +87,9 @@
                 <div class="newsline">
                     <div class="news-content">
                         <h2>Graduation! Graduation!! Graduation!!!</h2>
-                        <p>Federal Medical Health Technology, Uyo brings to you her 4th Convo...</p>
-                        <button type="submit">Read More</button>
+                        <p>Federal Medical Health Technology, Uyo brings to you her 4th Convo<span class="dot">...</span></p>
+                        <p class="moretext">cation ceremonial party.</p>
+                        <button id="readmore">Read More</button>
                     </div>
                     <img src="/campus-sync/images/Frame.png" alt="frame">
                 </div>
@@ -101,15 +102,15 @@
                         <img src="/campus-sync/images/hostel.png" alt="accomodation">
                         <h1 class="header1">Accomodation</h1>
                     </div>
-                    <div class="category-item">
+                    <div class="category-item2">
                         <img src="/campus-sync/images/navigation(1).png" alt="navigation">
                         <h1 class="header2">Navigation</h1>
                     </div>
-                    <div class="category-item">
+                    <div class="category-item3">
                         <img src="/campus-sync/images/wifi.png" alt="wifi">
                         <h1 class="header3">WiFi</h1>
                     </div>
-                    <div class="category-item">
+                    <div class="category-item4">
                         <img src="/campus-sync/images/market space.png" alt="market">
                         <h1 class="header4">Market</h1>
                     </div>
@@ -146,6 +147,9 @@
         const sidebarClose = document.querySelector('.sidebarClose svg');
         const sideBarMenu = document.querySelector('.sidebar');
         const accommodation = document.querySelector(".category-item");
+        const navigation = document.querySelector(".category-item2");
+        const wifi = document.querySelector(".category-item3");
+        const market = document.querySelector(".category-item4");
         const searchBtn = document.querySelector(".search-btn");
         const search = document.querySelector(".search");
 
@@ -181,6 +185,32 @@
         accommodation.addEventListener("click", () => {
             window.location.href = "accomodation.html";
         })
+        navigation.addEventListener("click", () => {
+            window.location.href = "nav.html";
+        })
+        wifi.addEventListener("click", () => {
+            window.location.href = "wifi.html";
+        })
+        market.addEventListener("click", () => {
+            window.location.href = "market.html";
+        })
+
+        
+        const moreText = document.querySelector(".moretext");
+        const readMore = document.getElementById("readmore");
+        const dot = document.querySelector(".dot");
+
+            readMore.addEventListener('click', () => {
+                if (moreText.style.display === "none") {
+                    moreText.style.display = "inline";
+                    dot.style.display = "none"
+                    readMore.textContent = "Read Less";
+                } else {
+                    moreText.style.display = "none";
+                    dot.style.display = "inline";
+                    readMore.textContent = "Read More";
+                }
+            })
     </script>
 </body>
 </html>
