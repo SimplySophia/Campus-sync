@@ -6,11 +6,6 @@
     box-sizing: border-box;
     font-family: "League Spartan", sans-serif;
 }
-.box-login{
-    position: relative;
-    top: 0;
-    left: 0;
-}
 .page{
     display: flex;
     justify-content: center;
@@ -24,22 +19,23 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 10%;
     background-color: #f5f5dc;
 }
 .container img{
-    margin-left: 8rem;
-    margin-top: 5rem;
+    margin-left: 8.5rem;
+    margin-top: 1rem;
+    width: 6rem;
 }
 .switch{
     position: relative;
     border: 1px solid #008080;
     border-radius: 0.5rem;
-    height: 42px;
-    width: 22rem;
+    height: 35px;
+    width: 20rem;
     display: flex;
     align-items: center;
-    margin: 4rem auto;
+    margin: 3rem auto;
     cursor: pointer;
     overflow: hidden;
 }
@@ -56,59 +52,28 @@
 .switch #login{
     color: #fff;
 }
+.switch #sign-up{
+    color: #008080;
+}
 
 #btn{
     position: absolute;
     bottom: 0;
     left: -0.3rem;
     width: 11rem;
-    height: 42px;
+    height: 35px;
     cursor: pointer;
     background-color: #008080;
     border-radius: 0.5rem;
     box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
 }
-
-/*.btn input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0.8rem 0.6rem;
-    border: 1px solid #008080;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    font-weight: 400;
-    text-align: right;
-    color: #008080;
-}
-.btn ::placeholder{
-    color: #008080;
-    padding-right: 2rem;
-}
-.btn button{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #008080;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 400;
-}*/
 form{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 23rem;
-    margin: -1rem auto;
-    gap: 1rem;
+    width: 20rem;
+    margin: 5rem auto;
+    gap: 0.8rem;
     z-index: 1;
 }
 
@@ -118,16 +83,16 @@ form{
     gap: 0.5rem;
 }
 form input{
-    padding: 0.9rem;
+    padding: 0.4rem;
     border-radius: 10px;
-    border: 1px solid #2e2e2e;
+    border: 1px solid #656363;
     outline: none;
 }
 form button{
-    padding: 0.8rem;
+    padding: 0.6rem;
     width: 100%;
     margin: auto;
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     border-radius: 10px;
     border: none;
     background-color: #008080;
@@ -153,8 +118,8 @@ form button{
   
 @media only screen and (min-width: 420px){
     .container{
-        height: 49rem;
-        width: 25rem;
+        height: 45rem;
+        width: 23rem;
         border-radius: 10px;
         border: 5px solid hsl(0, 0, 18%);
     }

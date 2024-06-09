@@ -4,26 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/campus-sync/css-files/homepage.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <title>Homepage</title>
 </head>
 <body>
-    <div id="page">
-        <div class="container">
+    <div id="container">
             <div class="head-screen">
                 <div class="profile">
                     <img src="/campus-sync/images/Display-pics.png" alt="Dp">
                     <h2>Good Morning! Adesuwa</h2>
                 </div>
-                <nav class="sidebar">
+                <div class="sidebarOpen">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                    </svg>
+                </div>
+                <nav class="sidebar show-sidebar">
                     <div class="sidebar-header">
-                        <img src="/campus-sync/images/Display-pics.png" alt="">
-                        <p>Adesuwa Adoja</p>
-                        <hr>
+                        <div class="sidebar-profile">
+                            <img src="/campus-sync/images/Display-pics.png" alt="Dp">
+                            <p>Adesuwa Adoja</p>
+                            <hr>
+                        </div>                        
+                        <div class="sidebarClose">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                               <path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
+                           </svg>
+                        </div>
                     </div>
                     
                     <div class="main-content">
-                        <ul class="menu-items">
-                            <div class="menu-title">
+                        <ul class="menu-title">
                                 <li class="item">
                                     <a href="#">Profile</a>
                                 </li>
@@ -37,7 +49,7 @@
                                 </li>
 
                                 <li class="item">
-                                    <a href="WiFi"></a>
+                                    <a href="WiFi">WiFi</a>
                                 </li>
 
                                 <li class="item">
@@ -51,17 +63,9 @@
                                 <li class="item">
                                     <a href="#">Log Out</a>
                                 </li>
-                            </div>
-                        </ul>
+                            </ul>
                     </div>
-                </nav>
-                <div class="hamburger">
-                    <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-                    </svg>
-                    </a>
-                </div> 
+                </nav> 
                      
             </div>
 
@@ -86,7 +90,7 @@
                         <p>Federal Medical Health Technology, Uyo brings to you her 4th Convo...</p>
                         <button type="submit">Read More</button>
                     </div>
-                    <img src="/campus-sync/images/Frame.png" alt="">
+                    <img src="/campus-sync/images/Frame.png" alt="frame">
                 </div>
             </div>
 
@@ -95,15 +99,19 @@
                 <div class="category">
                     <div class="category-item">
                         <img src="/campus-sync/images/hostel.png" alt="accomodation">
+                        <h1 class="header1">Accomodation</h1>
                     </div>
                     <div class="category-item">
                         <img src="/campus-sync/images/navigation(1).png" alt="navigation">
+                        <h1 class="header2">Navigation</h1>
                     </div>
                     <div class="category-item">
                         <img src="/campus-sync/images/wifi.png" alt="wifi">
+                        <h1 class="header3">WiFi</h1>
                     </div>
                     <div class="category-item">
                         <img src="/campus-sync/images/market space.png" alt="market">
+                        <h1 class="header4">Market</h1>
                     </div>
                 </div>
             </div>
@@ -132,10 +140,48 @@
         </div>
     </div>
     <script>
-        var hamburger = document.querySelector(".hamburger");
-        hamburger.addEventListener('click', function(){
-            document.querySelector("#page").classList.toggle('active')
+        const body = document.querySelector("body");
+        const headScreen = document.querySelector(".head-screen");
+        const sidebarOpen= document.querySelector('.sidebarOpen svg');
+        const sidebarClose = document.querySelector('.sidebarClose svg');
+        const sideBarMenu = document.querySelector('.sidebar');
+        const accommodation = document.querySelector(".category-item");
+        const searchBtn = document.querySelector(".search-btn");
+        const search = document.querySelector(".search");
+
+        sideBarMenu.style.display = 'none';
+
+        sidebarOpen.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (sideBarMenu.style.display === 'none'|| !sideBarMenu.style.display){
+                sideBarMenu.style.display = 'block';
+            } else {
+                sideBarMenu.style.display = 'none';
+            }
         });
-       </script>
+        sidebarClose.addEventListener("click", () => {
+            sideBarMenu.style.display = 'none';
+        })
+
+        body.addEventListener("click", e => {
+            sideBarMenu.style.display = 'none'
+        });
+        sideBarMenu.addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
+
+        searchBtn.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const query = search.value.trim();
+            if (query) {
+                window.location.href = `accomodation.html?query=${encodedURlComponent(query)}`;
+            }
+        })
+
+        accommodation.addEventListener("click", () => {
+            window.location.href = "accomodation.html";
+        })
+    </script>
 </body>
 </html>
+

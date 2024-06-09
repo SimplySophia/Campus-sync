@@ -8,7 +8,11 @@
     text-decoration: none;
     font-family: "League Spartan", sans-serif;
 }
-#page{
+::-webkit-scrollbar{
+    width: 0;
+    overflow: hidden;
+}
+body{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,98 +20,127 @@
     color: #2e2e2e;
     background-color: bisque;
 }
-.container{
+#container{
     position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 10%;
+    padding: 2rem 0;
     background-color: #f5f5dc;
 }
 .head-screen{
     position: relative;
-    width: 90%;
+    width: 85%;
     display: flex;
     justify-content: space-between;
-    
     align-items: center;
-    margin: 2rem auto;
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
 }
 .head-screen img{
-    width: 3rem;
+    width: 2.5rem;
 }
 .head-screen h2{
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
-.head-screen svg{
-    width: 2rem;
+.head-screen .sidebarOpen{
+    width: 1.5rem;
+    color: #008080;
+    cursor: pointer;
 }
 .sidebar{
-    
     background-color: #008080;
     position: fixed;
-    top: 2%;
-    left: 37.5rem;
-    height: 80%;
+    top: 1.7rem;
+    left: 38.5rem;
+    height: 55%;
     width: 200px;
-    padding: 1.5rem;
+    padding: 3rem auto;
+    border-radius: 10px;
     z-index: 90;
+    transform: translate(-100%);
+    transition: all 10s ease-out;
+}
+.show-sidebar{
+    transform: translate(0%) !important;
+}
+.sidebar::after{
+    content: '';
+    display: none;
+    width: 200px;
+    height: 55%;
+    position: absolute;
+    animation: appear 0.3s linear;
+}
+@keyframes appear {
+    from {
+        width: 0;
+    }
+    to {
+        width: 200px;
+    }
 }
 .sidebar-header{
     display: flex;
-    flex-direction: column;
-    margin: 2.5rem auto;
+    justify-content: space-between;
+    margin: 0.5rem;
     width: 100%;
 }
 .sidebar img{
-    width: 5rem;
+    width: 4rem;
 }
 .sidebar p{
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #fff;
 }
-.sidebar
+.sidebar-header .sidebarClose{
+   margin-right: 1rem;
+}
 .main-content{
-    position: relative;
+    position: absolute;
     height: 100%;
     width: 100%;
 }
-.menu-title{
-    font-size: 1.5rem;
-    padding: 1.5rem auto;
-    line-height: 2rem;
+.sidebar.active{
+    left: 38.5rem;
+    transition: all 0.4s ease;
 }
-.menu-items li a{
+.menu-title{
+    font-size: 1.2rem;
+    padding: 2rem 1rem;
+    line-height: 2.5rem;
+}
+.menu-title li a{
     color: #fff;
 }
-.menu-items .item a:hover,
-.menu-items .item a:active {
+.menu-title .item a:hover,
+.menu-title .item a.active {
     background-color: #fff;
     color: #008080;
-    border-right: 2px solid rgb(5, 68, 104);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
 }
-#page.active .sidebar{
-    left: -225px;
-}
-.notification{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: -2rem auto;
-    gap: 2rem;
-}
-.notification svg{
-    width: 2rem;
+#container.active .sidebar{
+    display: block;
+    left: 38.5rem;
+    transition: all .10s ease-out;
 }
 .search-btn{
     position: relative;
+    top: 0;
+    left: 0;
     border: 1px solid #008080;
     border-radius: 0.5rem;
     height: 38px;
-    width: 19rem;
+    width: 16rem;
     display: flex;
     align-items: center;
     margin: 1.5rem auto;
+    cursor: pointer;
 
 }
 .search-btn input {
@@ -115,23 +148,25 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    padding: 0.8rem 0.6rem;
+    height: 2.2rem;
+    padding: 0.6rem auto;
     border: 1px solid #008080;
     border: none;
     border-radius: 10px;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-weight: 400;
     color: #008080;
+    outline: none;
 }
 .search-btn ::placeholder{
-    font-size: 1rem;
-    text-align: center;
+    font-size: 0.8rem;
+    text-align: left;
+    padding-left: 0.2rem;
 }
 .search-btn svg{
     position: absolute;
     top: 0;
-    left: 0.5rem;
+    left: 12rem;
     width: 1.5rem;
     height: 2.2rem;
     color: rgb(177, 168, 168);
@@ -141,19 +176,29 @@
     font-size: 1rem;
     font-weight: 400;
 }
+.notification{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.notification svg{
+    width: 1.5rem;
+    margin-right: 2rem;
+}
+
 .news-wrapper{
     display: flex;
     flex-direction: column;
-    margin: 1rem 0;
 }
 .news-wrapper h1{
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-left: 1.5rem;
     margin-top: 1rem;
 }
 .newsline{
-    height: 135px;
-    width: 370px;
+    height: 9rem;
+    width: 20rem;
     margin: 1rem auto;
     display: flex;
     justify-content: space-between;
@@ -170,7 +215,7 @@
 }
 .news-content h2{
     width: 25ch;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: red;
     line-height: 1.5rem;
 }
@@ -180,7 +225,7 @@
     color: #008080;
 }
 .news-content button{
-    width: 7rem;
+    width: 6rem;
     padding: 0.4rem;
     background-color: #008080;
     color: #fff;
@@ -199,26 +244,54 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: -0.5rem auto;
 }
 .categories h1{
-    font-size: 1.5rem; 
+    font-size: 1rem;
+    margin: auto 1rem; 
 }
 
 .categories .category{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     margin: 0.3rem auto;
 }
 .category .category-item img{
-    width: 11rem;
-    height: 8rem;
+    width: 10rem;
+    height: 7.5rem;
     border-radius: 20px;
+}
+.category-item h1{
+    font-size: 1.2rem;
+}
+.category-item .header1{
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    color: #fff;
+}
+.category-item .header2{
+    position: absolute;
+    top: 3rem;
+    left: 12rem;
+    color: #fff;
+}
+.category-item .header3{
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    color: #fff;
+}
+.category-item .header4{
+    position: absolute;
+    bottom: 3rem;
+    left: 12rem;
+    color: #fff;
 }
 footer{
     position: absolute;
-    bottom: 2.5rem;
+    bottom: 3%;
     left: 0;
     width: 100%;
     height: 50px;
@@ -232,19 +305,26 @@ footer{
     justify-content: space-evenly;
     align-items: center;
     gap: 0.8rem;
-    margin: 3rem auto;
+    margin: 4rem auto;
 }
 .footer-icons svg{
-    width: 3rem; 
+    width: 1.5rem; 
     height: 2rem;
 }
 
 @media only screen and (min-width: 420px){
-    .container{
-        height: 49rem;
-        width: 25rem;
-        border-radius: 10px;
+    #container{
+        height: 45rem;
+        width: 23rem;
+        border-radius: 15px;
         border: 5px solid hsl(0, 0, 18%);
     }
+    .footer {
+        margin-top: 5rem;
+    }
 }
+/*
+<i class="fa-light fa-xmark"></i>
+<i class="fa-light fa-bars"></i>
+
 
