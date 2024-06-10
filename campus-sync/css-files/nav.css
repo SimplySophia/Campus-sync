@@ -45,9 +45,14 @@
     margin: 0.8rem auto;
     gap: 1rem;
 }
-.select-menu .select-btn{
+.search-container{
+    position: relative;
+    display: inline-block;
+}
+.search-container #select-btn{
     display: flex;
     height: 35px;
+    width: 100%;
     background-color: #fff;
     border: 1px solid #2e2e2e;
     outline: none;
@@ -58,33 +63,35 @@
     justify-content: space-between;
     cursor: pointer;
 }
-.select-btn svg{
+.search-container svg{
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
     width: 1rem;
-    margin: auto 1rem;
 }
-.select-menu .btn-text{
-    margin: auto 1.2rem;
+#select-btn::placeholder{
+    padding-left: 1rem;
 }
-.select-menu .options{
+.select-menu #dropdown{
     position: relative;
     padding: 1.2rem;
     margin: 0.8rem;
     background-color: #fff;
     display: none;
 }
-.select-menu.active .options{
+.select-menu.active #dropdown{
     display: block;
 }
-.options .option{
+#dropdown #option{
     display: flex;
     height: 35px;
     cursor: pointer;
     padding: 0 16px;
-    border-radius: 0.5rem;
+    border-radius: 0.8rem;
     align-items: center;
     background-color: #fff;
 }
-.options .option:hover{
+#dropdown #option:hover{
     background: #f2f2f2;
 }
  
