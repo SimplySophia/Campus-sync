@@ -7,8 +7,7 @@
     <title>Navigation</title>
 </head>
 <body>
-    <div id="page">
-        <div class="container">
+        <div id="container">
             <div class="left-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -20,67 +19,12 @@
                 <div class="select-menu">
                     <div class="search-container">
                         <input type="text" id="select-btn" onkeyup="searchOptions()" placeholder="Type to search...">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>
                     </div>  
+                    <div class="result-box">
 
-                    <ul id="dropdown">
-                        <li id="option">
-                            akpajo junc...
-                        </li>
-    
-                        <li id="option">
-                            <span>akpajo junc...</span>
-                        </li>
-    
-                        <li id="option">
-                            <span>akpajo junc...</span>
-                        </li>
-    
-                        <li id="option">
-                            <span>akpajo junc...</span>
-                        </li>
-    
-                        <li id="option">
-                            <span>akpajo junc...</span>
-                        </li>
-                    </ul>
-                    <div id="searchResult"></div>
-                </div>
-
-                <!--<div class="select-menu">
-                    <div class="select-btn"> class="option"
-                        <span class="btn-text"></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                          </svg>                          
                     </div>
-    
-                    <ul class="options">
-                        <li class="option">
-                            <span>akpajo junc...</span>
-                        </li>
-    
-                        <li class="option">
-                            <span>akpajo junc...</span>
-                        </li>
-    
-                        <li class="option">
-                            <span>akpajo junc...</span>
-                        </li>
-    
-                        <li class="option">
-                            <span>akpajo junc...</span>
-                        </li>
-    
-                        <li class="option">
-                            <span>akpajo junc...</span>
-                        </li>
-                    </ul>
-                </div>-->
-
-
+                </div>
+                    
                 <div class="check-circle">
                     <img src="/campus-sync/images/check-circle.png" alt="">
                     <p>Allow map to access my location</p>
@@ -111,47 +55,48 @@
                 </div>
             </footer>
         </div>
-    </div>
+    
     <script>
-        /*const optionMenu = document.querySelector('.select-menu');
-               selectBtn  =  optionMenu.querySelector('.select-btn');
-               options  =  optionMenu.querySelectorAll('.option');
-               btnText  =  optionMenu.querySelector('.btn-text');
+        let suggestedFields = [
+            'Akpajo junction',
+            'St johns, Iwofe Rd',
+            'Woji',
+            'Rumuola',
+            'Choba Market',
+            'Egbelu, Iwofe Rd',
+            'Ada george',
+            'Izuoba Rd',
+        ]
+        const searchBar = document.getElementById("select-btn");
+        const resultBox = document.querySelector(".result-box");
 
-               selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"))
-
-              options.forEach(Option => {
-                option.addEventListener('click', () => {
-                     let selectedOption = option.querySelector('.option-text').innerText;
-                     btnText.innerText = selectedOption
-                     console.log(selectOption)
-
-                });
-        });*/
-        function searchOptions() {
-            const input = document.getElementById("select-btn").value.toLowerCase();
-            const dropdown = document.getElementById("dropdown");
-            const options = dropdown.getElementsByTagName("option");
-            const searchResult = document.getElementById("searchResult");
-
-            let found = false;
-
-            for (let i = 0; i < options.length; i++) {
-                const option = option[i];
-                const txtValue = option.textContext || option.innerText;
-                if (txtValue.toLowerCase().indexOf(input) > -1) {
-                    option.style.display = "";
-                    found = true;
-                } else {
-                    option.style.display = "none";
-                }
+        searchBar.onkeyup = function() {
+            let result = [];
+            let input = searchBar.value;
+            
+            if(input.length) {
+                result = suggestedFields.filter((fields) => {
+                    return fields.toLowerCase().includes(input.toLowerCase());
+                })
+                console.log(result);
             }
-            if (!found) {
-                searchResult.textContent = "No matching option found.";
-            } else {
-                searchResult.textContent = "";
+            display(result);
+
+            if(!result.length){
+                resultBox.innerHTML = '';
             }
         }
+        function display(result) {
+            const content = result.map((list) =>{
+                return "<li onclick=selectInput(this)>" + list + "</li>";
+            });
+            resultBox.innerHTML = "<ul>" + content.join('') + "</ul>";
+        }
+        function selectInput(list) {
+            searchBar.value = list.innerHTML;
+            resultBox.innerHTML = '';
+        }
+            
     </script>
 </body>
 </html>
