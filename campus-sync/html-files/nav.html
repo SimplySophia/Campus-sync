@@ -29,9 +29,7 @@
                     <img src="/campus-sync/images/check-circle.png" alt="">
                     <p>Allow map to access my location</p>
                 </div>
-            
-
-            <button type="submit">Proceed</button>
+                <button id="proceedBtn">Proceed</button>
             <footer>
                 <div class="footer-icons">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -69,6 +67,12 @@
         ]
         const searchBar = document.getElementById("select-btn");
         const resultBox = document.querySelector(".result-box");
+        const proceedBtn = document.getElementById('proceedBtn');
+        const leftBtn = document.querySelector(".left-btn svg");
+
+        leftBtn.onclick = function() {
+            window.location.href = "homepage.html";
+        }
 
         searchBar.onkeyup = function() {
             let result = [];
@@ -95,6 +99,15 @@
         function selectInput(list) {
             searchBar.value = list.innerHTML;
             resultBox.innerHTML = '';
+        }
+
+        proceedBtn.onclick = function() {
+            const input = searchBar.value;
+            if (input.length && suggestedFields.includes(input)) {
+                window.location.href = "accomodation.html";
+            } else {
+                alert("Please select a valid field from the suggestions.")
+            }
         }
             
     </script>
