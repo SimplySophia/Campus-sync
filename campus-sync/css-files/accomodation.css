@@ -8,6 +8,10 @@
     text-decoration: none;
     font-family: "League Spartan", sans-serif;
 }
+::-webkit-scrollbar{
+    width: 0;
+    height: 10px;
+}
 body{
     display: flex;
     justify-content: center;
@@ -37,6 +41,16 @@ body{
 }
 .left-btn svg{
     width: 1rem;
+}
+section{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+}
+.card img{
+    width: 350px;
 }
 
 footer{
