@@ -38,17 +38,36 @@ body{
     width: 1.2rem;
 }
 section{
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
 }
-.card img{
-    width: 350px;
-    height: 180px;
+.card {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
 }
-
+.desc{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 1rem auto;
+}
+.type{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+.division{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 0.5rem;
+}
 footer{
     position: absolute;
     bottom: -1%;

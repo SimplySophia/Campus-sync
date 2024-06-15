@@ -301,10 +301,6 @@ footer{
     gap: 0.8rem;
     margin: 4rem auto;
 }
-.footer-icons svg{
-    width: 1.5rem; 
-    height: 2rem;
-}
 
 @media only screen and (min-width: 360px){
     #container{
