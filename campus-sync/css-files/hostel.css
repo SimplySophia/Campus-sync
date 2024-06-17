@@ -37,54 +37,97 @@ body{
 .left-btn svg{
     width: 1.2rem;
 }
-section{
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+.bgImg{
+    position: relative;
+    border-radius: 1.5rem;
 }
-.card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 340px;
-    height: 130px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 50px 0 rgba(0, 0, 0, 0.20);
-    border-radius: 15px;
+.screen-backdrop{
+    width: 100%;
+    min-height: 70%;
+    position: absolute;
+    top: 11rem;
+    left: 0;
+    background-color: #fff;
+    border-radius: 1.5rem;
 }
-.card .img{
-    width: 150px;
-    margin: 0.5rem 0 0 0.5rem;
-}
-.desc{
+.content{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
     gap: 0.5rem;
-    margin: 1rem auto;
-    color: #355151;
 }
-.type{
+.content h1{
+    font-size: 1.5rem;
+    margin: auto;
+    padding-top: 0.5rem;
+}
+.hostel{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
+    gap: 6rem;
+    margin: 1rem 2rem;
 }
-.division{
+.hostel .type{
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    margin: auto;
 }
-h1{
-    font-size: 1.2rem;
+.content .people,
+.rate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+    gap: 1rem;
 }
-h3{
+.h3{
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+}
+.line{
+    width: 350px;
+    margin: 0 auto;
+    border-top: 2px solid #2f2c2c;
+}
+.content .tap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0 0 2rem;
+    gap: 1rem;
+}
+.power,
+.wifi,
+.bed{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+    gap: 1rem;
+}
+p{
+    color: 355151;
+    font-size: 1.2em;
+}
+h4{
+    color: rgb(195, 141, 16);
+}
+button{
+    position: absolute;
+    bottom: 10%;
+    left: 1.2rem;
+    padding: 0.5rem;
+    width: 90%;
+    border-radius: 10px;
+    border: none;
+    background-color: #008080;
+    color: #fff;
     font-size: 1rem;
+    font-weight: 400;
 }
-
 footer{
     position: absolute;
     bottom: -1%;
