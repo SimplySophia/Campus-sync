@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css-files/market.css" />
+    <title>Market</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="left-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+          />
+        </svg>
+        <h1>Market Space</h1>
+      </div>
+      <section>
+        <div class="box">
+          <img src="/images/Frame 53.png" alt="restaurant" />
+        </div>
+        <div class="box">
+          <img src="/images/Frame 55.png" alt="grocerires" />
+        </div>
+        <div class="box">
+          <img src="/images/Frame 56.png" alt="clothings" />
+        </div>
+        <div class="box">
+          <img src="/images/Frame 57.png" alt="fish" />
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-icons">
+          <div class="home">
+            <a href="./homepage.html">
+              <img src="/images/Vector.png" alt="vector" />
+            </a>
+          </div>
+
+          <div class="location">
+            <a href="./nav.html">
+              <img src="/images/Map Pin.png" alt="map pin" />
+            </a>
+          </div>
+
+          <div class="key">
+            <a href="./wifi.html">
+              <img src="/images/Room Key.png" alt="room key" />
+            </a>
+          </div>
+
+          <div class="user">
+            <a href="./profile.html">
+              <img src="/images/Profile.png" alt="profile" />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const leftBtn = document.querySelector(".left-btn svg");
+
+      leftBtn.onclick = function () {
+        window.location.href = "homepage.html";
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css-files/index.css" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="screen-backdrop">
+          <img src="/images/LOGO.png" alt="LOGO" />
+          <div class="switch">
+            <a href="./login.html" id="login" onclick="login()">Login</a>
+            <a href="./index.html" id="sign-up" onclick="signUp()">Sign Up</a>
+            <div class="btn-active" id="btn"></div>
+          </div>
+        </div>
+
+        <h1>You're new here, sign up!</h1>
+        <form autocomplete="on" action="./login.html">
+          <div class="input-control">
+            <label for="name">Student's Name</label>
+            <input type="text" id="name" placeholder="Adesewa Adoja" required />
+          </div>
+          <div class="input-control">
+            <label for="institution">Institution</label>
+            <input
+              type="text"
+              id="institution"
+              placeholder="Federal Medical Health Technology, Uyo"
+              required
+            />
+          </div>
+
+          <div class="input-control">
+            <label for="faculty">Faculty/Department</label>
+            <input
+              type="text"
+              id="faculty"
+              placeholder="Medical Sciences/Dental Sciences"
+              required
+            />
+          </div>
+
+          <div class="input-control">
+            <label for="matric_number">Matric No:</label>
+            <input
+              type="text"
+              id="matric_number"
+              placeholder="FMT/23/DS/A-0081"
+              required
+            />
+          </div>
+
+          <div class="input-control">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="********"
+            />
+          </div>
+
+          <div class="input-control">
+            <label for="confirm_password">Confirm Password</label>
+            <input
+              type="password"
+              name="password"
+              id="confirm_password"
+              placeholder="********"
+            />
+          </div>
+
+          <button onclick="submitForm()" class="button">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      function submitForm() {
+        var name = document.getElementById("name").value;
+        var institution = document.getElementById("institution").value;
+        var faculty = document.getElementById("faculty").value;
+        var matric_number = document.getElementById("matric_number").value;
+        var password = document.getElementById("password").value;
+        var confirm_password =
+          document.getElementById("confirm_password").value;
+
+        if (password.length > 8) {
+          alert("Password should not exceed 8 characters.");
+          return;
+        }
+
+        if (password !== confirm_password) {
+          alert("Passwords do not match.");
+          return;
+        }
+
+        // Prepare data to send to the server
+        var formData = {
+          name: name,
+          institution: institution,
+          faculty: faculty,
+          matric_number: matric_number,
+          password: password,
+        };
+
+        // Send data to the server using AJAX
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "process_form.php", true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              // Successful response, redirect to another page
+              window.location.href = "success.html";
+            } else {
+              // Error handling
+              alert("An error occurred while processing your request.");
+            }
+          }
+        };
+        xhr.send(JSON.stringify(formData));
+      }
+    </script>
+  </body>
+</html>

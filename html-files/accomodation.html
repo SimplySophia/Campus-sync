@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css-files/accomodation.css" />
+    <title>Accomodation</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="left-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+          />
+        </svg>
+        <h1>Accomodation</h1>
+      </div>
+
+      <section>
+        <div class="card">
+          <a href="./oncamp.html">
+            <img src="/images/Frame 58.png" alt="frame" />
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="./offcamp.html">
+            <img src="/images/Frame 59.png" alt="frame" />
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="./intown.html">
+            <img src="/images/Frame 60.png" alt="frame" />
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-icons">
+          <div class="home">
+            <a href="./homepage.html">
+              <img src="/images/Vector.png" alt="vector" />
+            </a>
+          </div>
+
+          <div class="location">
+            <a href="./nav.html">
+              <img src="/images/Map Pin.png" alt="map pin" />
+            </a>
+          </div>
+
+          <div class="key">
+            <a href="./oncamp.html">
+              <img src="/images/Room Key.png" alt="room key" />
+            </a>
+          </div>
+
+          <div class="user">
+            <a href="./profile.html">
+              <img src="/images/Profile.png" alt="profile" />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const leftBtn = document.querySelector(".left-btn svg");
+
+      leftBtn.onclick = function () {
+        window.location.href = "homepage.html";
+      };
+    </script>
+  </body>
+</html>

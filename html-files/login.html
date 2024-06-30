@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login form</title>
+    <link rel="stylesheet" href="/css-files/login.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="screen-backdrop">
+          <img src="/images/LOGO.png" alt="LOGO" />
+          <div class="switch">
+            <a href="./login.html" id="login" onclick="login()">Login</a>
+            <a href="./index.html" id="sign-up" onclick="signUp()">Sign Up</a>
+            <div class="btn-active" id="btn"></div>
+          </div>
+        </div>
+
+        <form autocomplete="on" action="./homepage.html">
+          <div class="input-control">
+            <label for="institution" name="Institution">Institution</label>
+            <input
+              type="text"
+              id="institution"
+              name="institution"
+              placeholder="Federal Medical Health Technology, Uyo"
+              required
+            />
+            <div class="error"></div>
+          </div>
+
+          <div class="input-control">
+            <label for="matric" name="matric">Matric No:</label>
+            <input
+              type="text"
+              id="matno"
+              name="matric"
+              placeholder="FMT/23/DS/A-0081"
+              required
+            />
+            <div class="error"></div>
+          </div>
+
+          <div class="input-control">
+            <label for="password" name="password">Password</label>
+            <input type="password" name="password" id="password" />
+            <div class="error"></div>
+          </div>
+
+          <div class="butn">
+            <div class="forgot">
+              <span>Forgot password?</span>
+            </div>
+
+            <div class="sign-up">
+              <a href="#">Sign Up</a>
+            </div>
+          </div>
+
+          <button type="submit">Log In</button>
+        </form>
+      </div>
+    </div>
+
+    <!--<script>
+        const form = document.getElementById('form');
+        const institution = document.getElementById('institution');
+        const matric = document.getElementById('matric');
+        const password = document.getElementById('password');
+
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          
+        });
+
+
+        const setError = (element, message) => {
+          const inputControl = element.parentElement;
+          const errorDisplay = inputControl.querySelector('.error');
+
+          errorDisplay.innerText = message;
+          inputControl.classList.add('error');
+          inputControl.classList.remove('success')
+        };
+        const setSuccess = element => {
+          const inputControl = element.parentElement;
+          const errorDisplay = inputControl.querySelector('.error')
+
+          errorDisplay.innerText = '';
+          inputControl.classList.add('success');
+          inputControl.classList.remove('error')
+        };
+
+
+        const validateInputs = () => {
+          const institutionValue = institution.value.trim();
+          const matric = matric.value.trim();
+          const passwordValue = password.value.trim();
+
+          if (institutionValue === '') {
+            setError(institution, 'institution is required');
+          } else {
+            setSuccess(institution);
+          }
+
+          if (matricValue === '') {
+            setError(matric, 'matric is required');
+          } else if (!isValueEmail(matricValue)) {
+            setError(matric, 'Provide a valid matric number');
+          } else {
+            setSuccess(matric);
+
+          }
+
+          if (passwordValue === '') {
+            setError(password, 'password is required');
+
+          } else if (passwordValue.length < 8) {
+            setError(password, 'Password must be at least 8 character.');
+          } else {
+            setSuccess(password);
+          }
+          };
+          validateInputs();
+
+      </script>
+      <script>
+        const container = document.querySelector('.container')
+        login.addEventListener('click', () => {
+          container.classList.add('active');
+        });
+        login.addEventListener('click', () => {
+          container.classList.remove('active');
+        });
+
+
+      </script>-->
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Get form data
+          var formData = {
+            institution: document.getElementById("institution").value,
+            matric: document.getElementById("matno").value,
+            password: document.getElementById("password").value,
+          };
+
+          // Simulate form submission and redirect
+          simulateFormSubmission(formData);
+        });
+
+      function simulateFormSubmission(formData) {
+        // Simulate sending form data to server
+        console.log("Form data:", formData);
+      }
+    </script>
+  </body>
+</html>

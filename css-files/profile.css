@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-5,100..900&family=League+Spartan:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "League Spartan", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #2e2e2e;
+  background-color: bisque;
+}
+#container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 10%;
+  padding: 2rem 0;
+  background-color: #f5f5dc;
+}
+.left-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 1rem;
+}
+.left-btn h1 {
+  font-size: 1.1rem;
+}
+.left-btn svg {
+  width: 1.2rem;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem auto;
+}
+section img {
+  width: 180px;
+  margin: auto;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 1rem auto;
+}
+section h2 {
+  margin: 0.5rem 1.2rem;
+  font-size: 1.1rem;
+}
+label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #8d8888;
+  margin-left: 1.5rem;
+}
+.profile1 input {
+  padding: 0.8rem;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #a09999;
+  background-color: rgb(251, 244, 237);
+
+  outline: none;
+  margin: auto;
+}
+form input::placeholder {
+  font-size: 0.8rem;
+}
+.profile1 {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+  gap: 0.5rem;
+}
+.profile2 {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+  gap: 0.5rem;
+}
+.profile2 input {
+  padding: 0.8rem;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #a09999;
+  background-color: rgb(251, 244, 237);
+  outline: none;
+  margin: auto;
+}
+footer {
+  position: absolute;
+  bottom: -2%;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+.footer-icons {
+  width: 100%;
+  background-color: #355151;
+  border-radius: 0 0 10px 10px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.8rem;
+  margin: auto;
+}
+
+@media only screen and (min-width: 360px) {
+  #container {
+    height: 44rem;
+    width: 24rem;
+    border-radius: 10px;
+    border: 5px solid hsl(0, 0, 18%);
+  }
+}
